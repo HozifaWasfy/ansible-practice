@@ -1,0 +1,16 @@
+---
+---
+- hosts: all
+  tasks:
+
+  - name: setup cron job for ls
+    ansible.builtin.cron:
+      name: "ck dirs"
+      minute: 30
+      hour: "*"
+      job: "ls -al > dirs.txt"
+
+  - name: check package
+    package:
+       update_cache: true
+    become: true

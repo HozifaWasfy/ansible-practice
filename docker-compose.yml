@@ -1,0 +1,8 @@
+version: '1'
+
+services:
+  ansible-practice:
+    image: ssh-ubuntu:latest
+
+    deploy:
+      replicas: 3
